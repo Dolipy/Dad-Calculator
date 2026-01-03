@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dad`s calculator</title>
+</head>
+<link rel="stylesheet" href="Daddy`s calculator.css">
+
+<body>
+    <div class="calcdiv">
+        <div class="calcs">
+            <form action="" class="display">
+                <div class="display">
+                    <input type="text" name="display" id="dis">
+
+                </div>
+                <div class="icons">
+
+                    <ion-icon name="time-outline" id="time"></ion-icon>
+                    <ion-icon name="tablet-landscape-outline" id="ruler"></ion-icon>
+                    <ion-icon name="calendar-clear-outline"></ion-icon>
+                    <ion-icon name="backspace-outline" id="back" onclick="document.getElementById('dis').value = document.getElementById('dis').value.slice(0, -1)"></ion-icon>
+                </div>
+                <div class="bord">
+                </div>
+                <div>
+                    <input type="button" value="C" onclick="display.value = display.value=''" id="clear">
+                    <input type="button" value="()" onclick="display.value+='()'" id="operat">
+                    <input type="button" value="%" onclick="display.value+='/100'" id="operat">
+                    <input type="button" value="÷" onclick="display.value+='/'" id="operator">
+
+                </div>
+                <div><input type="button" value="7" onclick="display.value+='7'">
+                    <input type="button" value="8" onclick="display.value+='8'">
+                    <input type="button" value="9" onclick="display.value+='9'">
+                    <input type="button" value="x" onclick="display.value+='*'" id="operator">
+
+
+
+                </div>
+                <div><input type="button" value="4" onclick="display.value+='4'">
+                    <input type="button" value="5" onclick="display.value+='5'">
+                    <input type="button" value="6" onclick="display.value+='6'">
+                    <input type="button" value="-" onclick="display.value+='-'" id="operator">
+
+                </div>
+                <div><input type="button" value="1" onclick="display.value+='1'">
+                    <input type="button" value="2" onclick="display.value+='2'">
+                    <input type="button" value="3" onclick="display.value+='3'">
+                    <input type="button" value="+" onclick="display.value+='+'" id="operator">
+
+                </div>
+                <input type="button" value="+/-" onclick="toggleSign()">
+                <script>
+                    function toggleSign() {
+                        var display = document.getElementById('dis');
+                        if (display.value.charAt(0) === '-') {
+                            display.value = display.value.slice(1);
+                        } else {
+                            display.value = '-' + display.value;
+                        }
+                    }
+                </script>
+                <input type="button" value="0" onclick="display.value+='0'">
+                <input type="button" value="." onclick="display.value+='.'" id="dot">
+                <input type="button" value="=" id="equals2" onclick="display.value = eval(display.value)"> </div>
+        </form>
+    </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
